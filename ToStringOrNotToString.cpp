@@ -10,7 +10,7 @@ int main()
 	std::string myNewString = "Less typing";	
 	std::cout << isAString << std::endl;
 	std::cout << isNowAString << std::endl;
-	cout << myString ;
+	cout << myString << endl;
 	cout << myNewString << endl;
    	return 0;
 }
