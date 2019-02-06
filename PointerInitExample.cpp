@@ -6,9 +6,13 @@
     {
     
         int num = 3;
-        int *pNum = &num;
+    	int *pNum = &num;
+    	cout << pNum << endl;
+    	cout << *pNum << endl;
 
-        cout << pNum << endl;
+    	*pNum = 45;
+    	cout << *pNum << endl;
+    	cout << num << endl;
 
         return 0;
     }
