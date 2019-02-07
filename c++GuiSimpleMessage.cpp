@@ -7,6 +7,7 @@
     HMENU hMenu;
     
     void AddMenus(HWND hWnd);
+    void addControls(HWND hWnd);
     // Step 4: the Window Procedure
     LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
@@ -17,6 +18,7 @@
         {	
         	case FILE_MENU_NEW:
         		MessageBeep(MB_OK);
+        		addControls(hwnd);
         		break;
         	case FILE_MENU_OPEN:
         		MessageBeep(MB_ICONINFORMATION);
@@ -58,6 +60,13 @@
     	
     	
     	SetMenu(hWnd,hMenu);
+	}
+	
+	void addControls(HWND hWnd){
+		
+		CreateWindowW(L"static",L"Enter show name here :",WS_VISIBLE | WS_CHILD | WS_BORDER | SS_CENTER, 0, 0,800, 25, hWnd, NULL, NULL, NULL);
+		CreateWindowW(L"Edit",L"",WS_VISIBLE | WS_CHILD | WS_BORDER | ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL, 0, 25,800, 25, hWnd, NULL, NULL, NULL);
+		
 	}
     
     int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
